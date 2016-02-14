@@ -14,5 +14,5 @@ setup(name='tts',
       author_email='josh.milas@gmail.com',
       license='MIT',
       packages=['tts'],
-      install_requires=install_requires
+      install_requires=install_requires,
       zip_safe=False)
