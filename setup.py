@@ -1,4 +1,5 @@
 from setuptools import setup
+import platform
 
 install_requires = []
 if platform.system() == 'Windows':
