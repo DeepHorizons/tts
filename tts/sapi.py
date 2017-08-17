@@ -109,6 +109,6 @@ class Sapi(object):
 
 
 if __name__ == '__main__':
-    v = sapi()
-    v.setvoice('Anna')
-    v.getvoicenames()
+    v = Sapi()
+    v.set_voice('Anna')
+    v.get_voice_names()
