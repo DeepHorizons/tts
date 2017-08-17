@@ -23,12 +23,20 @@ voice = tts.sapi.Sapi()
 voice.say("Hello")
 voice.set_voice("Anna")
 voice.create_recording('output.wav', "This will be in a wav file")
-voice.rate(-5)
+voice.set_rate(-5)
 voice.say("This will be said slower")
 ```
 
-The SpVoice COM object is available as the voice variable in the instance of the Sapi class.
+The SpVoice COM object is available as the `voice` variable on the instance of the Sapi class.
+You can access the raw SAPI interface from it.
+The interface is available at:
+
 https://msdn.microsoft.com/en-us/library/ee125640%28v=vs.85%29.aspx
+
 Properties are assigned and read from, Methods are used like functions.
+For example, to adjust the volume:
+```
+voice.voice.Volume = 50
+```
 
 Happy Hacking
