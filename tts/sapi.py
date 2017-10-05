@@ -10,7 +10,7 @@ from os import name # Allows checking if using Windows
 try:
     assert(name() == 'nt') # Checks for Windows
 except:
-    raise RuntimeException("Windows is required.")
+    raise RuntimeError("Windows is required.")
 
 import comtypes.client  # Importing comtypes.client will make the gen subpackage
 try:
