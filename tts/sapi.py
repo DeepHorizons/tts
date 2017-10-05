@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 """
-This ia a helper to use the Microsoft SAPI
+This is a helper to use the Microsoft SAPI
 
-Needs to run on a windows system
+Needs to run on a Windows system
 Requires comtypes
 """
+
+from os import name # Allows checking if using Windows
+try:
+    assert(name() == 'nt') # Checks for Windows
+except:
+    raise RuntimeException("Windows is required.")
 
 import comtypes.client  # Importing comtypes.client will make the gen subpackage
 try:
@@ -17,7 +23,7 @@ except ImportError:
 
 
 class Sapi(object):
-    """A speech API using Microsofts SAPI through COM"""
+    """A speech API using the Microsoft SAPI through COM"""
 
     def __init__(self):
         super().__init__()
@@ -100,7 +106,7 @@ class Sapi(object):
     def create_recording(self, filename, message):
         """Make a recording of the given message to the file
         The file should be a .wav as the output is
-        PCM 22050 Hz 16 bit, Little engianness, Signed"""
+        PCM 22050 Hz 16 bit, Little endianness, Signed"""
         stream = self._create_stream(filename)
         temp_stream = self.voice.AudioOutputStream
         self.voice.AudioOutputStream = stream
