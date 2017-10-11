@@ -6,9 +6,9 @@ Needs to run on a Windows system
 Requires comtypes
 """
 
-from os import name # Allows checking if using Windows
+import os# Allows checking if using Windows
 try:
-    assert(name() == 'nt') # Checks for Windows
+    assert(os.name== 'nt') # Checks for Windows
 except:
     raise RuntimeError("Windows is required.")
 
