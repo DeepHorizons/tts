@@ -97,6 +97,10 @@ class Sapi(object):
         -10 is slowest, 10 is fastest"""
         self.voice.Rate = rate
 
+    def set_volume(self, volume):
+        """Recording volume (0-100)"""
+        self.voice.Volume = volume
+
     def _create_stream(self, filename):
         """Create a file stream handler"""
         stream = comtypes.client.CreateObject('Sapi.SpFileStream')
