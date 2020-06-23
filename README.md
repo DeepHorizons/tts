@@ -25,6 +25,8 @@ voice.set_voice("Anna")
 voice.create_recording('output.wav', "This will be in a wav file")
 voice.set_rate(-5)
 voice.say("This will be said slower")
+voice.set_volume(30)
+voice.say("This will be said on a lower volume")
 ```
 
 The SpVoice COM object is available as the `voice` variable on the instance of the Sapi class.
@@ -34,9 +36,10 @@ The interface is available at:
 https://msdn.microsoft.com/en-us/library/ee125640%28v=vs.85%29.aspx
 
 Properties are assigned and read from, Methods are used like functions.
-For example, to adjust the volume:
+For example, to pause a voice and then to resume it:
 ```
-voice.voice.Volume = 50
+voice.voice.Pause()
+voice.voice.Resume()
 ```
 
 Happy Hacking
