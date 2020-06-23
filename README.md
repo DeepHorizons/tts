@@ -22,9 +22,12 @@ import tts.sapi
 voice = tts.sapi.Sapi()
 voice.say("Hello")
 voice.set_voice("Anna")
+
 voice.create_recording('output.wav', "This will be in a wav file")
+
 voice.set_rate(-5)
 voice.say("This will be said slower")
+
 voice.set_volume(30)
 voice.say("This will be said on a lower volume")
 ```
