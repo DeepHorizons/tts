@@ -21,7 +21,7 @@ except ImportError:
     stream = comtypes.client.CreateObject("SAPI.SpFileStream")
     from comtypes.gen import SpeechLib
 
-from flags import SpeechVoiceSpeakFlags
+from .flags import SpeechVoiceSpeakFlags
 
 class Sapi(object):
     """A speech API using the Microsoft SAPI through COM"""
@@ -89,7 +89,7 @@ class Sapi(object):
             self.voice.AudioOutput = output
         return
 
-    def say(self, message, flag = SpeechVoiceSpeakFlags.Default):
+    def say(self, message, flag = SpeechVoiceSpeakFlags.Default.value):
         self.voice.Speak(message, flag)
         return
     
@@ -108,7 +108,7 @@ class Sapi(object):
         stream.Open(filename, SpeechLib.SSFMCreateForWrite)
         return stream
 
-    def create_recording(self, filename, message, flag = SpeechVoiceSpeakFlags.Default):
+    def create_recording(self, filename, message, flag = SpeechVoiceSpeakFlags.Default.value):
         """Make a recording of the given message to the file
         The file should be a .wav as the output is
         PCM 22050 Hz 16 bit, Little endianness, Signed"""
