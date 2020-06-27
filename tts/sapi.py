@@ -117,6 +117,7 @@ class Sapi(object):
         self.voice.AudioOutputStream = stream
         self.say(message, flag)
         self.voice.AudioOutputStream = temp_stream
+        stream.Close()
 
 
 if __name__ == '__main__':
